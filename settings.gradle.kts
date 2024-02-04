@@ -15,3 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android lerning Bogdan"
 include(":app")
+include(":tasks")
+include(":cars")
+include(":inners")
