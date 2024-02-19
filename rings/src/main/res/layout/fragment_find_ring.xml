@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".FindRingFragment">
+
+    <TextView
+            android:id="@+id/title_find_ring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="24dp"
+            android:textSize="36sp"
+            android:fontFamily="serif"
+            android:text="@string/findRing"/>
+    <EditText
+            android:id="@+id/ring_diameter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="20sp"
+            android:hint="Введите диаметр кольца"
+            android:inputType="numberDecimal"/>
+    <Button
+        android:id="@+id/search"
+        android:text="Найти"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textSize="26sp"
+        android:fontFamily="serif"
+        android:backgroundTint="#8BE7C6"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rings_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp"/>
+
+
+</LinearLayout>

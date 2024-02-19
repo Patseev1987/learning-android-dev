@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/mainFragment">
+
+    <fragment
+            android:id="@+id/mainFragment"
+            android:name="com.example.rings.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main">
+        <action
+                android:id="@+id/action_mainFragment_to_findRingFragment"
+                app:destination="@id/findRingFragment"/>
+        <action android:id="@+id/action_mainFragment_to_addRingFragment" app:destination="@id/addRingFragment"/>
+        <action android:id="@+id/action_mainFragment_to_helpFragment" app:destination="@id/helpFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/findRingFragment"
+            android:name="com.example.rings.FindRingFragment"
+            android:label="fragment_find_ring"
+            tools:layout="@layout/fragment_find_ring">
+        <action android:id="@+id/action_findRingFragment_to_mainFragment"
+                app:destination="@id/mainFragment"
+                app:popUpTo="@id/mainFragment"/>
+        <action
+                android:id="@+id/action_findRingFragment_to_ringFragment"
+                app:destination="@id/ringFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/ringFragment"
+            android:name="com.example.rings.RingFragment"
+            android:label="fragment_ring"
+            tools:layout="@layout/fragment_ring">
+        <action
+                android:id="@+id/action_ringFragment_to_findRingFragment"
+                app:destination="@id/findRingFragment"/>
+    </fragment>
+    <fragment android:id="@+id/addRingFragment" android:name="com.example.rings.AddRingFragment"
+              android:label="fragment_add_ring" tools:layout="@layout/fragment_add_ring">
+        <action android:id="@+id/action_addRingFragment_to_mainFragment" app:destination="@id/mainFragment"
+                app:popUpTo="@id/mainFragment"/>
+    </fragment>
+    <fragment android:id="@+id/helpFragment" android:name="com.example.rings.HelpFragment" android:label="fragment_help"
+              tools:layout="@layout/fragment_help">
+        <action android:id="@+id/action_helpFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+        <action android:id="@+id/action_helpFragment_to_mainFragment2" app:destination="@id/mainFragment"
+                app:popUpTo="@id/mainFragment"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RingFragment">
+
+
+    <ImageView
+            android:id="@+id/ring_image"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="40dp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:ignore="MissingConstraints"/>
+    <TextView
+            android:id="@+id/ring_diameter"
+            android:text="Диаметр"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:fontFamily="serif"
+            android:textColor="#FF5252"
+            app:layout_constraintStart_toEndOf="@+id/ring_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ring_image"
+    />
+    <TextView
+            android:id="@+id/ring_diameter_value"
+            android:text="20202020"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:fontFamily="serif"
+            android:textColor="#FF5252"
+            app:layout_constraintBottom_toBottomOf="@+id/ring_image"
+            app:layout_constraintTop_toBottomOf="@+id/ring_diameter"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/ring_diameter"
+            app:layout_constraintEnd_toEndOf="@+id/ring_diameter"/>
+    <TextView
+            android:id="@+id/type_of_ring_title"
+            android:text="1. Тип разрезного кольца:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ring_diameter_value"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"/>
+    <TextView
+            android:id="@+id/type_of_ring"
+            android:text="Type of ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/type_of_ring_title"
+            app:layout_constraintTop_toBottomOf="@+id/type_of_ring_title"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/inner_diameter_title"
+            android:text="2. Внутренний диаметр:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/type_of_ring"
+            app:layout_constraintTop_toBottomOf="@+id/type_of_ring"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/inner_diameter_value"
+            android:text="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/inner_diameter_title"
+            app:layout_constraintTop_toBottomOf="@+id/inner_diameter_title"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/outside_diameter_title"
+            android:text="3. Наружный диаметр:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/inner_diameter_value"
+            app:layout_constraintTop_toBottomOf="@+id/inner_diameter_value"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/outside_diameter_value"
+            android:text="150"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/outside_diameter_title"
+            app:layout_constraintTop_toBottomOf="@+id/outside_diameter_title"
+            android:layout_marginTop="16dp"/>
+
+    <TextView
+            android:id="@+id/thickness_title"
+            android:text="4. Толщина разрезного кольца:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/outside_diameter_value"
+            app:layout_constraintTop_toBottomOf="@+id/outside_diameter_value"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/thickness_value"
+            android:text="35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/thickness_title"
+            app:layout_constraintTop_toBottomOf="@+id/thickness_title"
+            android:layout_marginTop="16dp"/>
+
+    <TextView
+            android:id="@+id/deep_title"
+            android:text="5. Глубина разрезного кольца:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/thickness_value"
+            app:layout_constraintTop_toBottomOf="@+id/thickness_value"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:id="@+id/deep_value"
+            android:text="20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/deep_title"
+            app:layout_constraintTop_toBottomOf="@+id/deep_title"
+            android:layout_marginTop="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

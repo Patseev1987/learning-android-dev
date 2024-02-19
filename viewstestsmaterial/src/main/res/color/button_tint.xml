@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Disabled -->
+    <item android:alpha="@dimen/m3_comp_checkbox_selected_disabled_container_opacity"
+          android:color="#000"
+          android:state_enabled="false"/>
+
+    <!-- Checked -->
+    <item android:color="#0ED9B2" android:state_checked="true"/>
+
+    <!-- Unchecked -->
+    <item android:color="#000" android:state_checked="false"/>
+</selector>

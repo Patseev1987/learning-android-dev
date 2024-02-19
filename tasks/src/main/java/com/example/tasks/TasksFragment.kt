@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.tasks.RecyclerView.TaskItemAdapter
 import com.example.tasks.databinding.FragmentTasksBinding
 
@@ -28,12 +29,22 @@ class TasksFragment : Fragment() {
         val viewModel = ViewModelProvider(this,viewModelFactory)[TaskViewModel::class.java]
         binding.viewModel =viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        val adapter = TaskItemAdapter()
+        val adapter = TaskItemAdapter{
+            taskId -> viewModel.onTaskClicked(taskId)
+        }
+
+        viewModel.navigateToTask.observe(viewLifecycleOwner, Observer { taskId ->
+            taskId?.let {
+                val action = TasksFragmentDirections.actionTasksFragmentToEditTaskFragment(taskId)
+                this.findNavController().navigate(action)
+                viewModel.onTaskNavigated()
+            }
+        })
         binding.tasksList.adapter = adapter
 
         viewModel.tasks.observe(viewLifecycleOwner, Observer {
             it?.let{
-                adapter.data = it
+                adapter.submitList(it)
             }
         })
         return view

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".EditTaskFragment">
+    <data>
+        <variable name="viewModel" type="com.example.tasks.EditTaskViewModel"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="@={viewModel.task.taskName}"
+            android:ems="10"
+            android:id="@+id/task_name_edit_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="32dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"/>
+    <CheckBox
+            android:text="Task Done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_done_edit_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_name_edit_fragment"
+            android:checked="@={viewModel.task.taskDone}"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="32dp"/>
+    <Button
+            android:text="Update Task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/update_task"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_done_edit_fragment"
+            android:onClick="@{() -> viewModel.updateTask()}"
+            android:layout_marginTop="32dp"/>
+    <Button
+            android:text="Delete Task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_button_task"
+            app:layout_constraintStart_toStartOf="@+id/update_task"
+            app:layout_constraintEnd_toEndOf="@+id/update_task"
+            app:layout_constraintTop_toBottomOf="@+id/update_task"
+            android:onClick="@{()->viewModel.deleteTask()}"
+            android:layout_marginTop="32dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
